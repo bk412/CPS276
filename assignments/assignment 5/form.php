@@ -53,7 +53,7 @@ if(count($_POST) > 0){
                 <button type="submit" class="btn btn-primary" name="submitForm">Submit</button>
             </div>
         </div>
-    </form>
+        </form>
 </div>
 
 
