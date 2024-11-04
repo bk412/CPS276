@@ -40,7 +40,7 @@ class FileProc extends PdoMethods{
         }
     
         //IF ALL GOES WELL MOVE FILE FROM TEMP LCOATION TO THE 'Files' DIRECTORY 
-        elseif (!move_uploaded_file( $_FILES["file_path"]["tmp_name"], "files/" . $_POST["fileName"])){
+        elseif (!move_uploaded_file( $_FILES["file_path"]["tmp_name"], "folder/" . $_POST["fileName"])){
             $output= "Could not move file";
         }
 
@@ -94,7 +94,7 @@ class FileProc extends PdoMethods{
 	    // THESE BINDINGS ARE LATER INJECTED INTO THE SQL STATEMENT THIS PREVENTS AGAIN SQL INJECTIONS
 	    $bindings = [
 			[':fileName',$_POST['fileName'],'str'],
-			[':file_path',"files/" . $_POST["fileName"],'str'],
+			[':file_path',"folder/" . $_POST["fileName"],'str'],
 		];
 
 		// I AM CALLING THE OTHERBINDED METHOD FROM MY PDO CLASS
